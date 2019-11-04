@@ -4,6 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -34,6 +35,8 @@ namespace senai.Roman.WebApi.Controller
                {
                         new Claim("chave", "0123456789"),
                         new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email),
+                        new Claim("Nome", usuarioBuscado.Nome),
+                        new Claim("Imagem", usuarioBuscado.Foto),
                         new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.IdUsuario.ToString()),
                         new Claim(ClaimTypes.Role, usuarioBuscado.IdPermissaoNavigation.Nome),
                     };
@@ -66,6 +69,7 @@ namespace senai.Roman.WebApi.Controller
             usuariosRepository.CadastrarUser(user);
             return Ok();
         }
+        [Authorize(Roles = "Professor")]
         [HttpGet]
         public IActionResult Listar()
         {

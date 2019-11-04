@@ -41,11 +41,11 @@ namespace senai.Roman.WebApi
 
                     IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Roman-chave-autenticacao")),
 
-                    ClockSkew = TimeSpan.FromDays(50),
+                    ClockSkew = TimeSpan.FromMinutes(30),
 
-                    ValidIssuer = "Gufos.WebApi",
+                    ValidIssuer = "Roman.WebApi",
 
-                    ValidAudience = "Gufos.WebApi"
+                    ValidAudience = "Roman.WebApi"
                 };
             });
             services.AddSwaggerGen(c =>

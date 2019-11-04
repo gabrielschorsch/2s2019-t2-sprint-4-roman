@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai.Roman.WebApi.Domains;
@@ -14,12 +15,13 @@ namespace senai.Roman.WebApi.Controller
     public class ProjetosController : ControllerBase
     {
         ProjetosRepository projetosRepository = new ProjetosRepository();
-        
+        [Authorize]
         [HttpGet]
         public IEnumerable<Projetos> Listar()
         {
             return projetosRepository.Listar();
         }
+        [Authorize(Roles = "Professor")]
         [HttpPost]
         public IActionResult Cadastrar (Projetos pro)
         {
@@ -34,6 +36,7 @@ namespace senai.Roman.WebApi.Controller
                 return BadRequest(new { message = e.Message });
             }
         }
+        [Authorize(Roles = "Professor")]
         [HttpPut("{id}")]
         public IActionResult Atualizar(Projetos Pro, int id)
         {

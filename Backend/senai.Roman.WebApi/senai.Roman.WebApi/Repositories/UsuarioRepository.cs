@@ -1,4 +1,5 @@
-﻿using senai.Roman.WebApi.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using senai.Roman.WebApi.Domains;
 using senai.Roman.WebApi.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,9 @@ namespace senai.Roman.WebApi.Repositories
         {
             using (RomanContext ctx = new RomanContext())
             {
-                Usuarios usuario = ctx.Usuarios.FirstOrDefault(x => x.Email == Login.Email && x.Senha == Login.Senha);
+                // usuarios
+                // usuario + permissao
+                Usuarios usuario = ctx.Usuarios.Include(x => x.IdPermissaoNavigation).FirstOrDefault(x => x.Email == Login.Email && x.Senha == Login.Senha);
                 if (usuario == null)
                     return null;
                 return usuario;

@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "9a9e156c-5b80-4b32-a29b-555f5f9d6479",
+		"name": "Roman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Login.Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.4.221:5000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"4",
+								"221"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar.Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.4.221:5000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"4",
+								"221"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "temas",
+			"item": [
+				{
+					"name": "Cadastrar.Tema",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar.Temas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Projetos",
+			"item": [
+				{
+					"name": "Cadastrar.Projetos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://192.168.4.221:5000/api/projetos",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"4",
+								"221"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"projetos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar.Projetos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai.Roman.WebApi.Domains;
@@ -14,12 +15,14 @@ namespace senai.Roman.WebApi.Controller
     public class TemasController : ControllerBase
     {
         TemaRepository temaRepository = new TemaRepository();
-        
+
+        [Authorize(Roles = "Professor")]
         [HttpGet]
         public IEnumerable<Temas> Listar()
         {
             return temaRepository.Listar();
         }
+        [Authorize(Roles = "Professor")]
         [HttpPost]
         public IActionResult Cadastrar (Temas tem)
         {
