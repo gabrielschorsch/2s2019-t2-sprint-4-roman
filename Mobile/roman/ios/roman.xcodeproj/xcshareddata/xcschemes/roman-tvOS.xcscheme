@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "roman-tvOS.app"
-               BlueprintName = "roman-tvOS"
-               ReferencedContainer = "container:roman.xcodeproj">
+               BuildableName = "Roman-tvOS.app"
+               BlueprintName = "Roman-tvOS"
+               ReferencedContainer = "container:Roman.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "roman-tvOSTests.xctest"
-               BlueprintName = "roman-tvOSTests"
-               ReferencedContainer = "container:roman.xcodeproj">
+               BuildableName = "Roman-tvOSTests.xctest"
+               BlueprintName = "Roman-tvOSTests"
+               ReferencedContainer = "container:Roman.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "roman-tvOSTests.xctest"
-               BlueprintName = "roman-tvOSTests"
-               ReferencedContainer = "container:roman.xcodeproj">
+               BuildableName = "Roman-tvOSTests.xctest"
+               BlueprintName = "Roman-tvOSTests"
+               ReferencedContainer = "container:Roman.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "roman-tvOS.app"
-            BlueprintName = "roman-tvOS"
-            ReferencedContainer = "container:roman.xcodeproj">
+            BuildableName = "Roman-tvOS.app"
+            BlueprintName = "Roman-tvOS"
+            ReferencedContainer = "container:Roman.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "roman-tvOS.app"
-            BlueprintName = "roman-tvOS"
-            ReferencedContainer = "container:roman.xcodeproj">
+            BuildableName = "Roman-tvOS.app"
+            BlueprintName = "Roman-tvOS"
+            ReferencedContainer = "container:Roman.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "roman-tvOS.app"
-            BlueprintName = "roman-tvOS"
-            ReferencedContainer = "container:roman.xcodeproj">
+            BuildableName = "Roman-tvOS.app"
+            BlueprintName = "Roman-tvOS"
+            ReferencedContainer = "container:Roman.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
