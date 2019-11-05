@@ -14,24 +14,31 @@ const mockedUser =
 
 
 const styles = StyleSheet.create({
+    app: {
+        backgroundColor: '#333333',
+        height: '100%',
+        width: '100%',
+    },
     imagem: {
         width: 100,
         height: 100,
         borderRadius: 100,
-        borderColor: '#000',
+        borderColor: '#fff',
         borderWidth: 1,
         marginHorizontal: 12,
         marginVertical: 10,
+        tintColor:'#fff'
     },
 
     username: {
         fontSize: 15,
-        marginLeft: 15,
+        alignSelf: 'center',
         marginVertical: 5,
+        color:'#fff'
     },
     userDetails: {
         marginVertical: '7.5%',
-        marginHorizontal: '25%',
+        alignSelf: 'center'
     }
 })
 
@@ -66,10 +73,13 @@ export default class pages extends Component {
 
     render() {
         return (
-            <View style={styles.userDetails}>
-                <Image source={{ uri: this.state.user.Imagem }} style={styles.imagem} />
-                <Text style={styles.username}>{this.state.user.Nome}</Text>
-                <Text style={styles.username}>{this.state.user.email}</Text>
+            <View style={styles.app}>
+
+                <View style={styles.userDetails}>
+                    <Image source={{ uri: this.state.user.Imagem }} style={styles.imagem} />
+                    <Text style={styles.username}>{this.state.user.Nome}</Text>
+                    <Text style={styles.username}>{this.state.user.email}</Text>
+                </View>
             </View>
         );
     }

@@ -1,5 +1,7 @@
 import SignInScreen from './pages/signin'
 import Main from './pages/listagem'
+import CadastrarTemas from './pages/cadastrarTemas'
+import CadastrarProjetos from './pages/cadastrarProjetos'
 import User from './pages/user'
 import { AsyncStorage } from 'react-native'
 import { createBottomTabNavigator } from 'react-navigation-tabs';
@@ -18,21 +20,28 @@ const MainNavigator = createBottomTabNavigator(
         },
         User: {
             screen: User
+        },
+        Projetos: {
+            screen: CadastrarProjetos
+        },
+        Temas: {
+            screen: CadastrarTemas
         }
+
     },
     {
         tabBarOptions: {
-            activeBackgroundColor: '#aa4fff',
-            inactiveBackgroundColor: '#ba70ff',
+            activeBackgroundColor: 'rgb(40, 48, 156)',
+            inactiveBackgroundColor: 'rgb(29, 35, 115)',
             activeTintColor: '#ddd',
             inactiveTintColor: '#eee',
             showLabel: true,
             labelStyle: {
-                fontSize: 30,
+                fontSize: 20,
             },
             style: {
                 width: '100%',
-                height: 60
+                height: 50
             }
         },
     }
@@ -56,6 +65,6 @@ export default createAppContainer(
         MainNavigator, AuthStack
     }, {
 
-        initialRouteName: 'AuthStack'
+        initialRouteName: 'MainNavigator'
     })
 );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import { View, Text, FlatList, StyleSheet, AsyncStorage } from 'react-native';
-// import Video from "react-native-video";
+import { View, Text, FlatList, StyleSheet, AsyncStorage, ScrollView } from 'react-native';
+
 
 
 // import { Container } from './styles';
@@ -9,7 +9,7 @@ import { View, Text, FlatList, StyleSheet, AsyncStorage } from 'react-native';
 const styles = StyleSheet.create(
     {
         app: {
-            backgroundColor: '#fafafa',
+            backgroundColor: '#333333',
             height: '100%'
         },
         lista: {
@@ -18,8 +18,8 @@ const styles = StyleSheet.create(
         },
         listItem: {
             marginVertical: 15,
-            backgroundColor: '#fcfcfc',
-            borderColor: '#000',
+            backgroundColor: '#6b6b6b',
+            borderColor: '#fff',
             borderRadius: 15.5,
             borderWidth: 1
         },
@@ -30,25 +30,19 @@ const styles = StyleSheet.create(
         },
         listTitle: {
             fontSize: 15,
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            color:'#fff'
         },
         listSubtitle: {
             fontSize: 15,
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            color:'#fff'
         },
         listValue: {
-            fontSize: 15
+            fontSize: 15,
+            color:'lightgrey'
         },
-        backgroundVideo: {
-            height: '100%',
-            position: 'absolute',
-            bottom: 0,
-            top: 0,
-            right: 0,
-            left: 0,
-            alignItems: "stretch",
-
-        }
+        
     }
 )
 
@@ -59,7 +53,7 @@ export default class Listagem extends Component {
     constructor() {
         super();
         this.state = {
-            lista: []
+            lista: [],
         }
     }
 
@@ -68,44 +62,41 @@ export default class Listagem extends Component {
     }
 
     _recuperarProjetos = async () => {
-        
-        await fetch('http://192.168.4.221:5000/api/projetos', {
-            headers: { 'Authorization': 'Bearer ' + AsyncStorage.getItem('@roman:token') }
+        let token = await AsyncStorage.getItem('@roman:token');
+        await fetch('http://192.168.3.201:5000/api/projetos', {
+            headers: { 'Authorization': 'Bearer ' + token }
         })
             .then(x => x.json())
             .then(x => this.setState({ lista: x }))
             .catch(err => console.warn(err))
-
     }
+
 
     render() {
         return (
             <View style={styles.app}>
-                {/* <Video
-                    source={require("./../assets/videos/milos.mp4")}
-                    style={styles.backgroundVideo}
-                    muted={true}
-                    repeat={true}
-                    resizeMode={"cover"}
-                    rate={1.0}
-                    /> */}
-                <FlatList
-                    data={this.state.lista}
-                    keyExtractor={key => key.idProjeto}
-                    style={styles.lista}
-                    renderItem={({ item }) => (
-                        <View style={styles.listItem}>
-                            <View style={styles.listRow}>
-                                <Text style={styles.listTitle}>Nome:</Text>
-                                <Text style={styles.listValue}>{item.nome}</Text>
+
+                
+                <ScrollView>
+
+                    <FlatList
+                        data={this.state.lista}
+                        keyExtractor={key => key.idProjeto}
+                        style={styles.lista}
+                        renderItem={({ item }) => (
+                            <View style={styles.listItem}>
+                                <View style={styles.listRow}>
+                                    <Text style={styles.listTitle}>Nome:</Text>
+                                    <Text style={styles.listValue}>{item.nome}</Text>
+                                </View>
+                                <View style={styles.listRow}>
+                                    <Text style={styles.listSubtitle}>Tema:</Text>
+                                    <Text style={styles.listValue}>{item.idTemaNavigation.nome}</Text>
+                                </View>
                             </View>
-                            <View style={styles.listRow}>
-                                <Text style={styles.listSubtitle}>Tema:</Text>
-                                <Text style={styles.listValue}>{item.idTemaNavigation.nome}</Text>
-                            </View>
-                        </View>
-                    )}
-                />
+                        )}
+                    />
+                </ScrollView>
             </View>
         );
     }
