@@ -12287,11 +12287,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\38128442813\\Desktop\\desafio-roman\\2s2019-t2-sprint-4-roman\\Backend\\senai.Roman.WebApi\\senai.Roman.WebApi\\senai.Roman.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\38128442813\\Desktop\\roman\\2s2019-t2-sprint-4-roman\\Backend\\senai.Roman.WebApi\\senai.Roman.WebApi\\senai.Roman.WebApi.csproj",
       "projectName": "senai.Roman.WebApi",
-      "projectPath": "C:\\Users\\38128442813\\Desktop\\desafio-roman\\2s2019-t2-sprint-4-roman\\Backend\\senai.Roman.WebApi\\senai.Roman.WebApi\\senai.Roman.WebApi.csproj",
+      "projectPath": "C:\\Users\\38128442813\\Desktop\\roman\\2s2019-t2-sprint-4-roman\\Backend\\senai.Roman.WebApi\\senai.Roman.WebApi\\senai.Roman.WebApi.csproj",
       "packagesPath": "C:\\Users\\38128442813\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\38128442813\\Desktop\\desafio-roman\\2s2019-t2-sprint-4-roman\\Backend\\senai.Roman.WebApi\\senai.Roman.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\38128442813\\Desktop\\roman\\2s2019-t2-sprint-4-roman\\Backend\\senai.Roman.WebApi\\senai.Roman.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

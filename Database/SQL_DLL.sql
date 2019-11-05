@@ -20,6 +20,7 @@ idProjeto int primary key identity
 )
 
 create table usuarios (
+idUsuario int primary key identity,
 Nome varchar(255) not null
 ,Email Varchar(255) not null unique	
 ,Senha Varchar (255) not null 
@@ -38,4 +39,6 @@ select * from Projetos
 
 insert into usuarios (Nome ,Email,Senha,idPermissao) values ('schorsch','schorsch@gmail.com','password',1),('Pedro','Pedro@gmail.com','password',1)
 
-select * from usuarios
+	
+
+drop table usuarios

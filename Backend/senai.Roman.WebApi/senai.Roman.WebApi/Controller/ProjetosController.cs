@@ -37,6 +37,7 @@ namespace senai.Roman.WebApi.Controller
             }
         }
         [Authorize(Roles = "Professor")]
+            
         [HttpPut("{id}")]
         public IActionResult Atualizar(Projetos Pro, int id)
         {

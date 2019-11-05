@@ -22,5 +22,25 @@ namespace senai.Roman.WebApi.Repositories
                 ctx.SaveChanges();
             };
         }
+        public  Temas BuscarPorId (int id)
+        {
+            using (RomanContext ctx = new RomanContext())
+            {
+                Temas temaBuscado = ctx.Temas.FirstOrDefault(x => x.IdTema == id);
+                return temaBuscado;
+            }
+        }
+        public void Atualizar(Temas Tem)
+        {
+            using (RomanContext ctx = new RomanContext())
+            {
+                Temas AtualizarTem = ctx.Temas.FirstOrDefault(x => x.IdTema == Tem.IdTema);
+                AtualizarTem.Nome = Tem.Nome;
+                AtualizarTem.IdTema = Tem.IdTema;
+
+                ctx.Temas.Update(AtualizarTem);
+                ctx.SaveChanges();
+            }
+        }
     }
 }

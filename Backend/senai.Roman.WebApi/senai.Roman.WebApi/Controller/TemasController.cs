@@ -24,18 +24,41 @@ namespace senai.Roman.WebApi.Controller
         }
         [Authorize(Roles = "Professor")]
         [HttpPost]
-        public IActionResult Cadastrar (Temas tem)
+        public IActionResult Cadastrar(Temas tem)
         {
             try
             {
                 temaRepository.CadastrarTema(tem);
-                    return Ok();
+                return Ok();
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return BadRequest(new { message = e.Message });
             }
+        }
+
+
+        [HttpGet("{id}")]
+        public IActionResult BuscarPorId (int id)
+        {
+            Temas temas = temaRepository.BuscarPorId(id);
+
+            if (temas == null)
+                return null;
+            return Ok(temas);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Atualizar(Temas tem, int id)
+        {
+            Temas Atualizarpro = temaRepository.BuscarPorId(id);
+            if (Atualizarpro == null)
+                return NotFound();
+            tem.IdTema = id;
+            temaRepository.Atualizar(tem);
+            return Ok();
+
         }
 
     }
