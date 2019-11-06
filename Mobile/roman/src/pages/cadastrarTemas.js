@@ -1,10 +1,34 @@
 import React, { Component } from 'react';
 
-import { View, TextInput, Picker, Text, TouchableOpacity, AsyncStorage } from 'react-native';
+import { View, TextInput, Text, TouchableOpacity, AsyncStorage, StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+    app: {
+        backgroundColor: '#333333',
+        height: '100%',
+        justifyContent:'center'
+    },
+    input: {
+        alignSelf: 'center',
+        marginTop: 5,
+        borderColor: '#fff',
+        borderBottomWidth: 1,
+        width: 300,
+        color: '#fff'
+    },
+    button: {
+        color: '#fff',
+        borderColor: '#fff',
+        borderRadius: 30,
+        borderWidth: 1,
+        alignSelf: 'center',
+        marginTop: 30,
+        paddingHorizontal: 15,
+        paddingVertical: 7,
+    }
+})
 
 export default class cadastrarProjetos extends Component {
-
-
     constructor() {
         super();
         this.state = {
@@ -38,10 +62,10 @@ export default class cadastrarProjetos extends Component {
 
     render() {
         return (
-            <View>
-                <TextInput placeholder='Nome do tema' onChangeText={x => this.setState({ nome: x })} />
+            <View style={styles.app}>
+                <TextInput placeholderTextColor='#fff' style={styles.input} placeholder='Nome do tema' onChangeText={x => this.setState({ nome: x })} />
                 <TouchableOpacity onPress={this._cadastrarProjeto}>
-                    <Text>Cadastrar</Text>
+                    <Text style={styles.button}>Cadastrar</Text>
                 </TouchableOpacity>
                 <Text>{this.state.status}</Text>
 
